@@ -129,4 +129,52 @@ void main() {
   const divisao = 1 / 3;
   final sentence = 'A divisão de 1/3 é ${divisao.toStringAsFixed(2)}';
   print(sentence);
+  const StringGrande = '''Sou lindo 
+as
+ad
+wsdf
+''';
+  print(StringGrande);
+  const DuasLinhas = 'sou \nlindo';
+  print(DuasLinhas);
+
+  ///sou
+  ///lindo
+  const rawString = r'My name \n is $name.'; //começar com r é uma raw string,
+  // onde vai ser tudo convertido para string padrão, independente do que for armazenadao de caractere
+  print(rawString);
+  print('Eu \u2764 Dart\u0021');
+  print('Eu amo \u{1F3AF}');
+
+  ///----------------Mini - exercises ------------------
+  /// Create a string constant called firstName and initialize it to your first name.
+  /// Also create a string constant called lastName and initialize it to your last name.
+
+  const firstName = 'Rafael';
+  const lastName = 'Gavarron';
+  const nomeInteiro = '$firstName $lastName'; // dessa forma há interpolação
+  print(nomeInteiro);
+
+  ///Create a string constant called fullName
+  ///by adding the firstName and lastName constants together separated by a space.
+  ///(Já feito acima)
+  /// Using interpolation, create a string constant called myDetails
+  /// that uses the fullName constant to create a string introducing yourself.
+  /// For example, Ray Wenderlich’s string would read: Hello, my name is Ray Wenderlich.
+
+  const myDetails = 'Olá, meu nome é $nomeInteiro e eu sou incrível';
+  print(myDetails);
+
+  ///---------------------Challenge---------------------
+  ///You’re a teacher, and in your class, attendance is worth 20% of the grade, the homework is worth 30% and the exam is worth 50%.
+  ///Your student got 90 points for her attendance, 80 points for her homework and 94 points on her exam.
+  ///Calculate her grade as an integer percentage rounded down.
+  const presenca = 90 * 0.20;
+  const homework = 80 * 0.30;
+  const prova = 94 * 0.50;
+
+  final nota = 'a nota é de: ${(presenca + homework + prova).toInt()}';
+  print(nota);
+  const twoCountries = '\u{1F1F9}';
+  print(twoCountries.codeUnits);
 }
