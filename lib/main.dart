@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:characters/characters.dart';
 
 void main() {
@@ -180,6 +181,7 @@ wsdf
   //primeiro é Romania e segundo é Chad
 
   const vote = 'Thumbs up! 👍🏿';
+
   ///How many UTF-16 code units are there?
   // How many Unicode code points are there?
   // How many Unicode grapheme clusters are there?
@@ -188,7 +190,7 @@ wsdf
   print(vote.runes.length); // 13
   print(vote.characters.length); // 12
 
- ///What is wrong with the following code?
+  ///What is wrong with the following code?
   // const name = 'Ray';
   // name += ' Wenderlich';
 
@@ -216,8 +218,14 @@ wsdf
   ///--------------- Chapter 4 - Control flow ---------------
   const yes = true;
   const no = false;
-  const doesOneEqualTwo = 1==2;
+  const doesOneEqualTwo = 1 == 2;
   print(doesOneEqualTwo);
- print(1!==2);
-
+  print(1 != 2); //true
+  print(!(1 == 2)); //false
+  const maiorQue = 1 > 2;
+  const menorQue = 1 < 2;
+  print(maiorQue);
+  print(menorQue);
+  const maiorOuIgual = 1 >= 2; //false
+  const menorOuIgual = 1 <= 2; //true
 }
