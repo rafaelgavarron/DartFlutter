@@ -1,6 +1,6 @@
-# foobar
+# DartFlutter
 
-A new Flutter project.
+Meu aprendizado em Dart usando o livro Dart Apprentice.
 
 ## Getting Started
 
