@@ -175,6 +175,50 @@ wsdf
 
   final nota = 'a nota é de: ${(presenca + homework + prova).toInt()}';
   print(nota);
-  const twoCountries = '\u{1F1F9}';
-  print(twoCountries.codeUnits);
+  const twoCountries = '🇷🇴🇹🇩';
+  print(twoCountries.runes);
+  //primeiro é Romania e segundo é Chad
+
+  const vote = 'Thumbs up! 👍🏿';
+  ///How many UTF-16 code units are there?
+  // How many Unicode code points are there?
+  // How many Unicode grapheme clusters are there?
+
+  print(vote.codeUnits.length); //15
+  print(vote.runes.length); // 13
+  print(vote.characters.length); // 12
+
+ ///What is wrong with the following code?
+  // const name = 'Ray';
+  // name += ' Wenderlich';
+
+  var name1 = 'Ray';
+  name1 += ' Wenderlich';
+  print(name1); //não tava juntando pq era constante, const nn pode ser alterada
+
+  //What’s the type of value?
+  //const value = 10 / 2;
+
+  const value = 10 / 2; //double
+  var valueInt = value.toInt(); //int
+  print(valueInt); //5
+
+  /// What is the value of the constant named summary?
+  // const number = 10;
+  // const multiplier = 5;
+  // final summary = '$number \u00D7 $multiplier = ${number * multiplier}';
+
+  const number = 10;
+  const multiplier = 5;
+  const summary = '$number \u00D7 $multiplier = ${number * multiplier}';
+  print(summary); // 10 x 5 = 50
+
+  ///--------------- Chapter 4 - Control flow ---------------
+  const yes = true;
+  const no = false;
+  const doesOneEqualTwo = 1==2;
+  print(doesOneEqualTwo);
+
+ print(1!==2);
+
 }
