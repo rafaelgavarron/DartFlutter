@@ -228,4 +228,28 @@ wsdf
   print(menorQue);
   const maiorOuIgual = 1 >= 2; //false
   const menorOuIgual = 1 <= 2; //true
+  const operadorE = maiorOuIgual &&
+      menorOuIgual; //false, pq os dois necessitam ser verdadeiro
+  print(operadorE);
+  const operadorOU = maiorOuIgual ||
+      menorOuIgual; //true, pois necessita que somente um seja verdadeiro
+  print(operadorOU);
+  const andTrue = 1 < 2 && 4 > 3; //true
+  const andFalse = 1 < 2 && 3 > 4; //false
+  const orTrue = 1 < 2 || 3 > 4; //true
+  const orFalse = 1 == 2 || 3 == 4; //false
+  const true1 = 3 > 4 && 1 < 2 || 1 < 4; //true
+  print(true1);
+  const meTeenager = myAge >= 13 && myAge <= 19;
+  print('é adolescente: $meTeenager');
+  const maryAge = 30;
+  const maryTeenager = maryAge >= 13 && maryAge <= 19;
+  const bothTeenagers = meTeenager && maryTeenager;
+  print(bothTeenagers);
+  const reader = 'Rafael Gavarron';
+  const ray = 'Ray Wenderlich';
+  const rayIsReader = reader == ray;
+  print(rayIsReader);
+
+  ///----------------If Statement----------------
 }
