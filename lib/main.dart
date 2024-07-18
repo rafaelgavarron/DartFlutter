@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:characters/characters.dart';
 
 const global = 'Hello, World';
@@ -381,5 +380,41 @@ wsdf
   }
 
   /// ----------------- While ------------------
-  ///
+  var sum = 1;
+  while (sum < 10) {
+    sum += 4;
+    print(sum);
+  }
+
+  /// ---------------- Do While ----------------
+  sum = 1;
+  do {
+    sum += 4;
+    print(sum);
+  } while (sum < 10);
+
+  sum = 11;
+  while (sum < 10) {
+    sum += 4;
+  }
+  print(sum); //11
+  do {
+    sum += 4;
+  } while (sum < 10);
+  print(sum); //15
+  sum = 1;
+  while (true) {
+    sum += 4;
+    print(sum);
+    if (sum > 10) {
+      break;
+    }
+  }
+  final random = Random();
+  while (random.nextInt(6) + 1 != 6) {
+    print('Não é um 6!');
+  }
+  print('Ufa!');
+
+  /// --------------- for ----------------
 }
