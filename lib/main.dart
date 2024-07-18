@@ -2,6 +2,21 @@ import 'dart:math';
 
 import 'package:characters/characters.dart';
 
+const global = 'Hello, World';
+
+enum Weather {
+  sunny,
+  snowy,
+  cloudy,
+  rainy,
+}
+
+enum AudioState {
+  playing,
+  paused,
+  stopped,
+}
+
 void main() {
   print(((8000 / (5 * 10)) - 32) ~/ (29 % 5));
   print(350 ~/ (5 + 2)); // ~/ = divide, mas retorna somente o Inteiro
@@ -252,4 +267,118 @@ wsdf
   print(rayIsReader);
 
   ///----------------If Statement----------------
+  if (2 > 1) {
+    print('Sim');
+  } //'Sim'
+  const animal = 'Fox';
+  if (animal == 'Cat' || animal == 'Dog') {
+    print('Animal is a house pet.');
+  } else {
+    print('Animal is not a house pet.');
+  } //'Animal is not a house pet.'
+
+  const local = 'Hello main';
+  if (2 > 1) {
+    const insideIf = 'Hello, anybody?';
+    print(global);
+    print(local);
+    print(insideIf);
+  }
+  print(global);
+  print(local);
+  //print(insideIf); //Não é permitido
+
+  const score = 83;
+
+  // String message;
+  // if (score >= 60) {
+  //   message = 'You passed';
+  // } else {
+  //   message = 'You failed';
+  // } //MUUUITO código
+
+  const message12 = (score >= 60) ? 'You passed' : 'You failed';
+  //pouco código
+  print(message12);
+
+  //myAge = 24
+  if (myAge >= 13 && myAge <= 19) {
+    print('Teenager');
+  } else {
+    print('Not a Teenager');
+  }
+
+  const answer = (myAge >= 13 && myAge <= 19) ? 'Teenager' : 'Not a teenager';
+  print(answer);
+
+  ///switch (variable) {
+  ///  case value 1:
+  ///    code
+  ///break;
+  ///case value2:
+  ///  code
+  ///break;
+  ///
+  ///...
+  ///
+  ///default:
+  ///  code
+  ///}
+
+  /// ------------- if para switch --------------
+  /// const number = 3;
+  // if (number == 0) {
+  //   print('zero');
+  // } else if (number == 1) {
+  //   print('one');
+  // } else if (number == 2) {
+  //   print('two');
+  // } else if (number == 3) {
+  //   print('three');
+  // } else if (number == 4) {
+  //   print('four');
+  // } else {
+  //   print('something else');
+  // }
+
+  const numberSwitch = 3;
+  switch (numberSwitch) {
+    case 3:
+      print('TOP');
+      break;
+    case 2:
+      print('bla');
+      break;
+    default:
+      print('no');
+  }
+  const WeatherToday = Weather.cloudy;
+  switch (WeatherToday) {
+    case Weather.sunny:
+      print('Put on sunscreen');
+      break;
+    case Weather.snowy:
+      print('Get your skis');
+      break;
+    case Weather.cloudy:
+    case Weather.rainy:
+      print('Bring an umbrella');
+      break;
+  }
+  final index = WeatherToday.index;
+  print(index);
+  const audioState = AudioState.paused;
+  switch (audioState) {
+    case AudioState.paused:
+      print('Tá pausado');
+      break;
+    case AudioState.playing:
+    case AudioState.stopped:
+      print('Não tá pausado');
+      break;
+    default:
+      print('Sla');
+  }
+
+  /// ----------------- While ------------------
 }
