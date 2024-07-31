@@ -417,4 +417,97 @@ wsdf
   print('Ufa!');
 
   /// --------------- for ----------------
+  for (var i = 0; i < 5; i++) {
+    if (i == 2) {
+      continue;
+    }
+    print(i);
+  }
+
+  /// --------------- for-in --------------
+  const myString = 'I ❤ Dart ';
+  for (var codePoint in myString.runes) {
+    print(String.fromCharCode(codePoint));
+  }
+
+  /// --------------- forEach ---------------
+  const myNumbers = [1, 2, 3];
+  myNumbers.forEach((number) => print(number));
+
+  /// myNumbers.forEach((number) {
+  ///   print(number);
+  /// }); é a mesma coisa
+
+  ///---------------- mini-exercises -----------
+  var counter = 0;
+
+  while (counter < 10) {
+    print('counter is $counter');
+    counter++;
+  }
+  for (var i = 1; i <= 10; i++) {
+    print(i * i);
+  }
+  const numbers = [1, 2, 4, 7];
+  for (var quadrada in numbers) {
+    print(sqrt(quadrada));
+  }
+  numbers.forEach((number) => print(sqrt(number)));
+
+  /// -------------- Challenges ----------------
+
+  const firstName1 = 'Bob';
+  if (firstName == 'Bob') {
+    const lastName1 = 'Smith';
+  } else if (firstName == 'Ray') {
+    const lastName1 = 'Wenderlich';
+  }
+  // final fullName = '$firstName1 $lastName1'; não é local
+
+  print(true && true); //true
+  print(false || false); //false
+  print((true && 1 != 2) || (4 > 3 && 100 < 1)); //true
+  print(((10 / 2) > 3) && ((10 % 2) == 0)); //true
+
+  const number12 = 946;
+  var trial = 1;
+  var times = 0;
+  while (trial < number12) {
+    trial = trial * 2;
+    times += 1;
+  }
+  print('Next power of 2 >= $number12 is $trial '
+      'which is 2 to the power of $times.');
+
+  const n = 10;
+  var previous = 1;
+  var current = 1;
+  var counter1 = 2;
+  for (var i = 2; i < n; i++) {
+    var next = current + previous;
+    previous = current;
+    current = next;
+  }
+  print('A Fibonacci de $n é $current');
+  var sum5 = 0;
+  for (var i = 0; i <= 5; i++) {
+    sum5++;
+  }
+  print(sum5); //6
+
+  for (var countdown = 10; countdown >= 0; countdown--) {
+    print(countdown);
+  }
+  var sum3 = 0;
+  for (var i = 0; i <= 5; i++) {
+    sum3 += i;
+    print(sum3);
+  }
+  //Print 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+  double numero = 0.0;
+  for (var i = 0; i <= 10; i++) {
+    String numeroFix = numero.toStringAsFixed(1);
+    numero += 0.1;
+    print(numeroFix);
+  }
 }
