@@ -510,4 +510,241 @@ wsdf
     numero += 0.1;
     print(numeroFix);
   }
+
+  /// ------------ Função -----------------
+  // const input = 12;
+  // final output = compliment(input);
+  // print(output);
+  print(compliment(12));
+
+  void helloPersonAndPet(String person, String pet) {
+    print('Hello, $person, and your furry friend, $pet!');
+  }
+
+  helloPersonAndPet('boy', 'girl');
+
+  String fullName(String first, String last, [String? title]) {
+    if (title != null) {
+      return '$title $first $last';
+    } else {
+      return '$first $last';
+    }
+  }
+
+  print(fullName('Albert', 'Einstein'));
+  print(fullName('Professor', 'Albert', 'Einstein'));
+
+  // bool withinTolerance(int value, {int min = 0, int max = 10}) {
+  //   return min <= value && value <= max;
+  // }
+  bool withinTolerance({
+    required int value,
+    int min = 0,
+    int max = 10,
+  }) {
+    return min <= value && value <= max;
+  }
+
+  print(withinTolerance(value: 12)); // false
+  print(withinTolerance(value: 3, min: 21, max: 55)); //false
+  print(withinTolerance(value: 9, min: 7, max: 11)); // true
+  String hello() {
+    return 'Hello';
+  }
+
+  print(hello());
+  var myPreciousData = 5782;
+  String anInnocentLookingFunction(String name) {
+    myPreciousData = -1;
+    return 'Hello, $name. Heh, heh';
+  }
+
+  print(myPreciousData); //5782
+  print(anInnocentLookingFunction('rafael'));
+  print(myPreciousData); //-1
+
+  String compliment1(number) {
+    return '$number tbm é um bom número.';
+  }
+
+  /// ----------- Mini - Exercises --------------
+  String youAreWonderful(String name, {int numberPeople = 30}) {
+    return 'Vc tbm é lindo $name. $numberPeople tbm acham';
+  }
+
+  print(youAreWonderful('oii'));
+
+  /// ----------------- Anonymous functions -----------
+  int number212 = 4;
+  String greeting = 'Hello';
+  bool isHungry = true;
+  Function multiply = (int a, int b) {
+    return a * b;
+  };
+  print(multiply(2, 4)); //8
+
+  void namedFunction(Function anonymousFunction) {
+    // body function
+  }
+  Function namedFunction1() {
+    return () {
+      print('hello');
+    };
+  }
+
+  final multiply12 = (int a, int b) {
+    return a * b;
+  };
+  print(multiply12(2, 3));
+
+  Function applyMultiplier(num multiplier) {
+    return (num value) {
+      return value * multiplier;
+    };
+  }
+
+  //print(applyMultiplier(2));
+  final triple = applyMultiplier(3);
+
+  print(triple(6)); //18
+  print(triple(14.0)); //42
+
+  const numbers1 = [1, 2, 3];
+  numbers1.forEach((number) {
+    final tripled = number * 3;
+    print(tripled);
+  });
+  var counter3 = 0;
+  final incrementCounter = () {
+    counter3 += 1;
+  };
+  incrementCounter();
+  incrementCounter();
+  incrementCounter();
+  incrementCounter();
+  incrementCounter();
+  print(counter3);
+  Function countingFunction() {
+    var counter212 = 0;
+    final incrementCounter = () {
+      counter212 += 1;
+      return counter212;
+    };
+    return incrementCounter;
+  }
+
+  final counter12 = countingFunction();
+  final counter22 = countingFunction();
+  print(counter12());
+  print(counter22());
+  print(counter12());
+  print(counter12());
+  print(counter22());
+
+  /// -------------- Mini-Exercises -------------------
+  Function wonderful = (String name, {int numberPeople = 30}) {
+    return 'Vc tbm é lindo $name. $numberPeople pessoas tbm acham';
+  };
+
+  print(wonderful('Rafael', numberPeople: 123));
+
+  const people = ['Chris', 'Tiffani', 'Pablo'];
+  people.forEach((String) => print('vc é lindo $String'));
+  for (var String in people) {
+    print('vc é lindo $String');
+  }
+
+  /// ----------------- Arrow Functions -------------------
+  int add(int a, int b) {
+    return a + b;
+  }
+
+  int add1(int a, int b) => a + b; //é a mesma coisa
+
+  // final multiply1 = (int a, int b) {
+  //  return a * b;
+  // };
+  final multiply1 = (int a, int b) => a * b;
+  print(multiply1(2, 3)); //6
+
+  // Function applyMultiplier(num multiplier) {
+  //   return (num value) {
+  //     return value * multiplier;
+  //   };
+  // }
+  Function applyMultiplier1(num multiplier) =>
+      (num value) => value * multiplier;
+
+  /// --------------- Mini- exercise -------------------
+
+  // Function wonderful = (String name, {int numberPeople = 30}) {
+  //   return 'Vc tbm é lindo $name. $numberPeople pessoas tbm acham';
+  // };
+  //
+  // print(wonderful('Rafael', numberPeople: 123));
+
+  Function wonderful1 = (String name12, {int numberPeople1 = 12}) =>
+      'Vc tbm é lind12 $name12. $numberPeople1 tbm acham';
+  print(wonderful1('oiii'));
+
+  /// -------------- Challenges -----------------------
+  // Challenge 1: Prime time
+  // Write a function that checks if a number is prime.
+  String primo(int n) {
+    for (var i = 2; i < n - 1; i++) {
+      if (n % i == 0) {
+        return 'Não é primo';
+      }
+    }
+    return 'é Primo';
+  }
+
+  // Function primo = (int n) {
+  //   for (var i = 2; i < n - 1; i++) {
+  //     if (n % i == 0) {
+  //       return 'Não é primo';
+  //     }
+  //   }
+  //   return 'é Primo';
+  // };
+  print(primo(6));
+  print(primo(13));
+  print(primo(8893));
+
+  // Write a function named repeatTask with the following definition:
+  // int repeatTask(int times, int input, Function task)
+  // It repeats a given task on input for times number of times.
+  // Pass an anonymous function to repeatTask to square the input of 2 four times.
+  // Confirm that you get the result 65536,
+  // since 2 squared is 4, 4 squared is 16, 16 squared is 256, and 256 squared is 65536.
+  int repeatTask(int times, int input, Function task) {
+    int result = task(input);
+    for (var i = 1; i < times; i++) {
+      result = task(result);
+    }
+    return result;
+  }
+
+  final result = repeatTask(4, 2, (num input) {
+    return pow(input, 2);
+  });
+  print(result);
+
+  /// Challenge 3: Darts and arrows
+  /// Update Challenge 2 to use arrow syntax.
+  final result1 = repeatTask(4, 2, (num input) => pow(input, 2));
+  print(result1);
+
+  // -------------------- Classes --------------------
+}
+
+// Isso é da aula de classes
+class User {
+  int id = 0;
+  String name = '';
+}
+
+//Isso é da aula de função
+String compliment(int number) {
+  return '$number is a very nice number';
 }
