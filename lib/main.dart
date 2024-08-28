@@ -736,10 +736,15 @@ wsdf
   print(result1);
 
   // -------------------- Classes --------------------
-  final user = User();
-  user.name = 'Ray';
+  final user = User()
+    ..name = 'Ray'
+    ..id = 42;
+  user.name = 'Rafael';
   user.id = 42;
-  print(user);
+  print(user.name);
+  print(user.toJson());
+  final password = Password();
+  print(password.isValid());
 }
 
 // Isso é da aula de classes
@@ -750,6 +755,27 @@ class User {
   @override
   String toString() {
     return 'User(id: $id, name: $name)';
+  }
+
+  String toJson() {
+    return '{"id":$id, "name": "$name"}';
+  }
+}
+
+class Password {
+  String value = '';
+
+  bool isValid() {
+    if (value.length > 8) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @override
+  String toString() {
+    return 'O valor é: $value';
   }
 }
 
